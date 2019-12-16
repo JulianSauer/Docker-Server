@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  envsubst-backup:
+    image: docker.pkg.github.com/juliansauer/envsubst/envsubst:latest
+    volumes:
+      - ${PWD}/env/:/env
+      - ${PWD}/../Backup/:/sub
+      - ${PWD}/../Backup/envsubst-out/:/out
+  envsubst-minecraft:
+    image: docker.pkg.github.com/juliansauer/envsubst/envsubst:latest
+    volumes:
+      - ${PWD}/env/:/env
+      - ${PWD}/../Minecraft/:/sub
+      - ${PWD}/../Minecraft/envsubst-out/:/out
+  envsubst-remote-controller:
+    image: docker.pkg.github.com/juliansauer/envsubst/envsubst:latest
+    volumes:
+      - ${PWD}/env/:/env
+      - ${PWD}/../RemoteController/:/sub
+      - ${PWD}/../RemoteController/envsubst-out/:/out

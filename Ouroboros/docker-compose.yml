@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  ouroboros:
+    env_file:
+      - .env
+      - ../Envsubst/env/server.env
+    container_name: ouroboros
+    hostname: ouroboros
+    image: pyouroboros/ouroboros
+    environment:
+      - CLEANUP=true
+      - CRON=0 5 * * *
+      - LOG_LEVEL=info
+      - SELF_UPDATE=true
+      - MONITOR=ts_teamspeak_1 rc_remote-controller_1
+      - NOTIFIERS="tgram://${TELEGRAM_TOKEN}/${TELEGRAM_CHAT_ID}"
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

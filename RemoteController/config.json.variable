@@ -1,0 +1,6 @@
+{
+  "ServerPort": "${REMOTE_CONTROLLER_SERVER_PORT}",
+  "RemoteSwitchHost": "${REMOTE_CONTROLLER_HOST}",
+  "RemoteSwitchPort": "${REMOTE_CONTROLLER_PORT}",
+  "RemoteSwitchUID": "${REMOTE_CONTROLLER_UID}"
+}

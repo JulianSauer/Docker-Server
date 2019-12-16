@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  zeugnisabfrage:
+    env_file:
+      - .env
+      - ../Envsubst/env/server.env
+    image: docker.pkg.github.com/juliansauer/zeugnisabfragetudortmund/zeugnisabfragetudortmund:latest
+    restart: always
+    environment:
+      ABSCHLUSS: MA
+      MATRIKELNUMMER: "${MATRIKELNUMMER}"
+      TELEGRAM_TOKEN: "${TELEGRAM_TOKEN}"
+      TELEGRAM_CHAT_ID: "${TELEGRAM_CHAT_ID}"

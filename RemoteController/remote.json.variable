@@ -1,0 +1,25 @@
+{
+  "HouseCode": ${REMOTE_CONTROLLER_HOUSE_CODE},
+  "Buttons": [
+    {
+      "Id": 1,
+      "On": "${REMOTE_CONTROLLER_1_ON}",
+      "Off": "${REMOTE_CONTROLLER_1_OFF}"
+    },
+    {
+      "Id": 2,
+      "On": "${REMOTE_CONTROLLER_2_ON}",
+      "Off": "${REMOTE_CONTROLLER_2_OFF}"
+    },
+    {
+      "Id": 3,
+      "On": "${REMOTE_CONTROLLER_3_ON}",
+      "Off": "${REMOTE_CONTROLLER_3_OFF}"
+    },
+    {
+      "Id": 8,
+      "On": "${REMOTE_CONTROLLER_8_ON}",
+      "Off": "${REMOTE_CONTROLLER_8_OFF}"
+    }
+  ]
+}

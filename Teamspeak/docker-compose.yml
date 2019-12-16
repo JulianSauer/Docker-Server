@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  teamspeak:
+    image: teamspeak:latest
+    restart: always
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+    environment:
+      TS3SERVER_LICENSE: accept
+    volumes:
+      - ${PWD}/volumes/teamspeak:/var/ts3server
