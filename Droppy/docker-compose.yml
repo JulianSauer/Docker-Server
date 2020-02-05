@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  droppy:
+    image: silverwind/droppy:11.1.0
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: $PWD/volumes/droppy/config
+        target: /config
+      - type: bind
+        source: $PWD/volumes/droppy/files
+        target: /files
+    ports:
+      - 80:8989

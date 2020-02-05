@@ -1,3 +1,4 @@
 **/volumes/**/
 **/envsubst-out/**
 **/.DS_Store
+!**/**.gitkeep
