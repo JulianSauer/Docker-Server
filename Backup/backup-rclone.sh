@@ -3,8 +3,19 @@
 timestamp=$(date +%Y%m%d-%H%M%S)
 filename=${1}-${timestamp}
 
-echo "Backing up ${1} as ${filename} using rclone"
+echo "Backing up ${directory}${1} as ${filename} using rclone"
+
+if [[ -n "${2}" ]];
+then
+	cp -r ${2}${1} ./
+fi
+
 tar cvf ${filename}.tar ${1}
 mv ${filename}.tar ./volumes/rclone/drive/
 
-docker-compose up
+if [[ -n "${2}" ]];
+then
+	rm -rf ${1}
+fi
+
+docker-compose -f docker-compose-upload.yml up
