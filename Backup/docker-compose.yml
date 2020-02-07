@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  rclone:
+    image: rclone/rclone:1.51.0
+    command: sync /data/ drive:/Docker-Server/
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: $PWD/volumes/rclone/config
+        target: /config/rclone
+      - type: bind
+        source: $PWD/volumes/rclone/drive
+        target: /data

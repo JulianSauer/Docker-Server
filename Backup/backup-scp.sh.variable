@@ -3,8 +3,8 @@
 timestamp=$(date +%Y%m%d-%H%M%S)
 filename=${1}-${timestamp}
 
-echo "Backing up ${1} to ${filename}"
+echo "Backing up ${1} as ${filename} using scp"
 tar cvf ${filename}.tar ${1}
 
-scp ${filename} ${BACKUP_REMOTE}:${BACKUP_DIRECTORY}
+scp ${filename}.tar ${BACKUP_REMOTE}:${BACKUP_DIRECTORY}
 echo "Saved file at ${BACKUP_REMOTE}:${BACKUP_DIRECTORY}"
